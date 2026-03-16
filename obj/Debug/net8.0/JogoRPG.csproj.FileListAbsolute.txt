@@ -1,0 +1,14 @@
+C:\Users\jonny\OneDrive\Documentos\Jogo RPG escrito\JogoRPG\JogoRPG\bin\Debug\net8.0\JogoRPG.exe
+C:\Users\jonny\OneDrive\Documentos\Jogo RPG escrito\JogoRPG\JogoRPG\bin\Debug\net8.0\JogoRPG.deps.json
+C:\Users\jonny\OneDrive\Documentos\Jogo RPG escrito\JogoRPG\JogoRPG\bin\Debug\net8.0\JogoRPG.runtimeconfig.json
+C:\Users\jonny\OneDrive\Documentos\Jogo RPG escrito\JogoRPG\JogoRPG\bin\Debug\net8.0\JogoRPG.dll
+C:\Users\jonny\OneDrive\Documentos\Jogo RPG escrito\JogoRPG\JogoRPG\bin\Debug\net8.0\JogoRPG.pdb
+C:\Users\jonny\OneDrive\Documentos\Jogo RPG escrito\JogoRPG\JogoRPG\obj\Debug\net8.0\JogoRPG.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jonny\OneDrive\Documentos\Jogo RPG escrito\JogoRPG\JogoRPG\obj\Debug\net8.0\JogoRPG.AssemblyInfoInputs.cache
+C:\Users\jonny\OneDrive\Documentos\Jogo RPG escrito\JogoRPG\JogoRPG\obj\Debug\net8.0\JogoRPG.AssemblyInfo.cs
+C:\Users\jonny\OneDrive\Documentos\Jogo RPG escrito\JogoRPG\JogoRPG\obj\Debug\net8.0\JogoRPG.csproj.CoreCompileInputs.cache
+C:\Users\jonny\OneDrive\Documentos\Jogo RPG escrito\JogoRPG\JogoRPG\obj\Debug\net8.0\JogoRPG.dll
+C:\Users\jonny\OneDrive\Documentos\Jogo RPG escrito\JogoRPG\JogoRPG\obj\Debug\net8.0\refint\JogoRPG.dll
+C:\Users\jonny\OneDrive\Documentos\Jogo RPG escrito\JogoRPG\JogoRPG\obj\Debug\net8.0\JogoRPG.pdb
+C:\Users\jonny\OneDrive\Documentos\Jogo RPG escrito\JogoRPG\JogoRPG\obj\Debug\net8.0\JogoRPG.genruntimeconfig.cache
+C:\Users\jonny\OneDrive\Documentos\Jogo RPG escrito\JogoRPG\JogoRPG\obj\Debug\net8.0\ref\JogoRPG.dll
