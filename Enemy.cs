@@ -1,17 +1,10 @@
 ﻿using System;
 
-public class Enemy
+public class Enemy : Character
 {
-    public string nome;
-    public int vida;
-    public int atk;
+    public int ;
 
-    public void atacar()
-    {
-
-    }
-
-    public void receberdano(int dano)
+    public void atkespecial()
     {
 
     }

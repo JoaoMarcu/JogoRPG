@@ -1,9 +1,10 @@
-﻿using System.Runtime.InteropServices;
+﻿
 public class Game
 {
     Player jogador;
 
     Enemy inimigo1;
+
     public void StartGame()
     {
         CreatePlayer();
@@ -16,7 +17,7 @@ public class Game
         jogador = new Player();
         jogador.nome = ("Gladiador");
         jogador.vida = 100;
-        jogador.atk = 10;
+        jogador.atk = 20;
 
     }
     public void CreateEnemy()
@@ -35,38 +36,55 @@ public class Game
         while (true)
         {
 
-            if (inimigo1.vida > 0)
+            inimigo1.vida = inimigo1.vida - jogador.atk;
+            jogador.vida = jogador.vida - inimigo1.atk;
+
+            if (inimigo1.vida > 0 && jogador.vida > 0)
+
             {
-                string ini1N = inimigo1.nome;
-                int ini1V = inimigo1.vida;
-                int iniA = inimigo1.atk;
 
-                string jogN = jogador.nome;
-                int jogV = jogador.vida;
-                int jogA = jogador.atk;
-
-                int dano1 = ini1V - jogA;
-                int dano2 = jogV - iniA;
-
-                Console.WriteLine($"{jogN} causou {jogA} de dano em {ini1N}");
-                Console.WriteLine($"vida restante de {ini1N}: {dano1}");
+                Console.WriteLine($"{jogador.nome} causou {jogador.atk} de dano em {inimigo1.nome}");
+                Console.WriteLine($"{inimigo1.nome} causou {inimigo1.atk} de dano no {jogador.nome}");
 
                 Console.Write("Clique enter:"); Console.ReadLine();
 
-                Console.WriteLine($"{ini1N} causou {iniA} de dano no {jogN}");
-                Console.WriteLine($"vida restante de {jogN}: {dano2}");
+                Console.WriteLine($"vida restante de {jogador.nome}: {jogador.vida}");
+                Console.WriteLine($"vida restante de {inimigo1.nome}: {inimigo1.vida}");
 
                 Console.Write("Clique enter:"); Console.ReadLine();
-
-                inimigo1.vida = inimigo1.vida - jogador.atk;
-                jogador.vida = jogador.vida - inimigo1.atk;
             }
-            else
+
+            else if (jogador.vida <= 0)
             {
+                Console.WriteLine($"{jogador.nome} causou {jogador.atk} de dano em {inimigo1.nome}");
+                Console.WriteLine($"{inimigo1.nome} causou {inimigo1.atk} de dano no {jogador.nome}");
+
+                Console.Write("Clique enter:"); Console.ReadLine();
+
+                Console.WriteLine($"vida restante de {jogador.nome}: {jogador.vida}");
+                Console.WriteLine($"vida restante de {inimigo1.nome}: {inimigo1.vida}");
+
+                Console.Write("Clique enter:"); Console.ReadLine();
+
+                Console.WriteLine("Você Morreu!");
                 break;
             }
+            else 
+            {
 
-            
+                Console.WriteLine($"{jogador.nome} causou {jogador.atk} de dano em {inimigo1.nome}");
+                Console.WriteLine($"{inimigo1.nome} causou {inimigo1.atk} de dano no {jogador.nome}");
+
+                Console.Write("Clique enter:"); Console.ReadLine();
+
+                Console.WriteLine($"vida restante de {jogador.nome}: {jogador.vida}");
+                Console.WriteLine($"vida restante de {inimigo1.nome}: {inimigo1.vida}");
+
+                Console.Write("Clique enter:"); Console.ReadLine();
+
+                Console.WriteLine("Você Venceu!"); 
+                break;
+            }
         }
     }
 }

@@ -1,18 +1,18 @@
 ﻿using System;
 
-public class Player
+public class Player : Character
 {
-	public string nome;
-	public int vida;
-	public int atk;
 
-	public void atacar()
+	public void Defender()
 	{
+        bool defendendo = true
+    }
 
-	}
-
-	public void receberdano(int dano)
+	public void Curar()
 	{
+		vida += 20;
 
+		if (vida > 100)
+			vida = 100;
 	}
 }
