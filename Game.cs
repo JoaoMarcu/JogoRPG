@@ -16,6 +16,7 @@ public class Game
     {
         jogador = new Player();
         jogador.nome = ("Gladiador");
+        jogador.vidamax = 100;
         jogador.vida = 100;
         jogador.atk = 20;
 
@@ -25,6 +26,7 @@ public class Game
         inimigo1 = new Enemy();
 
         inimigo1.nome = ("Prisioneiro Faminto");
+        inimigo1.vidamax = 40;
         inimigo1.vida = 40;
         inimigo1.atk = 8;
 

@@ -2,17 +2,31 @@
 
 public class Player : Character
 {
+    bool defendendo;
 
-	public void Defender()
+
+    public void Defender()
 	{
-        bool defendendo = true
+        defendendo = true
     }
 
-	public void Curar()
+    public override void ReceberDano(int dano)
+	{
+        if (defendendo == true)
+            dano = 0;
+
+        vida -= dano;
+
+        defendendo = false;
+    }
+
+
+    public void Curar()
 	{
 		vida += 20;
 
-		if (vida > 100)
-			vida = 100;
+		if (vida > vidamax)
+			vida = vidamax;
 	}
 }
+

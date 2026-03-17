@@ -5,6 +5,7 @@ public class Character
     public string nome;
     public int vida;
     public int atk;
+    public int vidamax;
 
     bool defendendo;
 
@@ -18,16 +19,10 @@ public class Character
         alvo.ReceberDano(atk);
     }
 
-    public void ReceberDano(int dano)
+    public virtual void ReceberDano(int dano)
     {
-        
-
-        if (defendendo == true)
-            dano = 0;
 
         vida -= dano;
-
-        defendendo = false
 
         if (vida < 0)
             vida = 0;
