@@ -2,11 +2,12 @@
 
 public class Enemy : Character
 {
-    public int ;
+    int veneno = 2;
 
-    public void atkespecial()
+    public void Envenenar(Player alvo)
     {
-
+        alvo.ReceberDanoVeneno(veneno);
     }
+
 }
 

@@ -2,19 +2,12 @@
 
 public class Character
 {
-    public string nome;
+    public required string nome;
     public int vida;
     public int atk;
     public int vidamax;
 
-    bool defendendo;
-
-    public void Defender()
-    {
-        defendendo = true
-    }
-
-    public void atacar(Character alvo)
+    public void Atacar(Character alvo)
     {
         alvo.ReceberDano(atk);
     }
@@ -32,5 +25,4 @@ public class Character
     {
         return vida > 0;
     }
-}
 }

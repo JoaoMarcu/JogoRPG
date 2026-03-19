@@ -2,22 +2,47 @@
 
 public class Player : Character
 {
-    bool defendendo;
 
+    bool envenenado;
+    bool defendendo;
+    public int veneno = 2;
 
     public void Defender()
 	{
-        defendendo = true
+        defendendo = true;
     }
 
     public override void ReceberDano(int dano)
-	{
-        if (defendendo == true)
+    {
+        if (defendendo)
+        {
             dano = 0;
+            defendendo = false;
+        }
 
-        vida -= dano;
+        if (envenenado)
+        {
+            vida -= veneno;
+        }
+
+        base.ReceberDano(dano);
+
+        if (vida < 0)
+            vida = 0;
+    }
+
+    public void ReceberDanoVeneno(int danoVeneno)
+    {
+        envenenado = true;
+
+        danoVeneno = veneno;
+
+        vida -= danoVeneno;
 
         defendendo = false;
+
+        if (vida < 0)
+            vida = 0;
     }
 
 
@@ -28,5 +53,7 @@ public class Player : Character
 		if (vida > vidamax)
 			vida = vidamax;
 	}
+
+    
 }
 
