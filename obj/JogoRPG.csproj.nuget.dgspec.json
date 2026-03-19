@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jonny\\OneDrive\\Documentos\\Jogo RPG escrito\\JogoRPG\\JogoRPG\\JogoRPG.csproj": {}
+    "C:\\Users\\jonny\\OneDrive\\Documentos\\GitHub\\JogoRPG\\JogoRPG.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jonny\\OneDrive\\Documentos\\Jogo RPG escrito\\JogoRPG\\JogoRPG\\JogoRPG.csproj": {
+    "C:\\Users\\jonny\\OneDrive\\Documentos\\GitHub\\JogoRPG\\JogoRPG.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jonny\\OneDrive\\Documentos\\Jogo RPG escrito\\JogoRPG\\JogoRPG\\JogoRPG.csproj",
+        "projectUniqueName": "C:\\Users\\jonny\\OneDrive\\Documentos\\GitHub\\JogoRPG\\JogoRPG.csproj",
         "projectName": "JogoRPG",
-        "projectPath": "C:\\Users\\jonny\\OneDrive\\Documentos\\Jogo RPG escrito\\JogoRPG\\JogoRPG\\JogoRPG.csproj",
+        "projectPath": "C:\\Users\\jonny\\OneDrive\\Documentos\\GitHub\\JogoRPG\\JogoRPG.csproj",
         "packagesPath": "C:\\Users\\jonny\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jonny\\OneDrive\\Documentos\\Jogo RPG escrito\\JogoRPG\\JogoRPG\\obj\\",
+        "outputPath": "C:\\Users\\jonny\\OneDrive\\Documentos\\GitHub\\JogoRPG\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

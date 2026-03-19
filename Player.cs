@@ -22,6 +22,7 @@ public class Player : Character
 
         if (envenenado)
         {
+            Console.WriteLine("Gladiador está envenenado!");
             vida -= veneno;
         }
 
@@ -34,6 +35,11 @@ public class Player : Character
     public void ReceberDanoVeneno(int danoVeneno)
     {
         envenenado = true;
+
+        if (envenenado)
+        {
+            Console.WriteLine("Gladiador está envenenado!");
+        }
 
         danoVeneno = veneno;
 
@@ -48,7 +54,14 @@ public class Player : Character
 
     public void Curar()
 	{
-		vida += 20;
+
+        if (envenenado)
+        {
+            Console.WriteLine("O efeito do Veneno passou!");
+            envenenado = false;
+        }   
+
+        vida += 20;
 
 		if (vida > vidamax)
 			vida = vidamax;
