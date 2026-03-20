@@ -1,13 +1,17 @@
-﻿
+﻿using System;
 public class Game
 {
     Player jogador;
 
     Enemy inimigo1;
 
+    Arte TelaDeInicio;
+
     public void StartGame()
     {
-        
+        TelaDeInicio = new Arte()
+        {};
+        TelaDeInicio.ExibirArte();
         CreatePlayer();
         CreateEnemy();
         Combat();
