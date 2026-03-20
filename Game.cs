@@ -24,7 +24,7 @@ public class Game
             nome = ("Gladiador"),
             vidamax = 100,
             vida = 100,
-            atk = 8
+            atk = 2
         };
 
     }
@@ -35,11 +35,11 @@ public class Game
             nome = ("Prisioneiro Faminto"),
             vidamax = 60,
             vida = 60,
-            atk = 6,
+            atk = 2,
         };
     }
 
-    public void next()
+    public void Continue()
     {
         Console.Write("\nAperte enter para continuar:");
         Console.ReadLine();
@@ -48,6 +48,7 @@ public class Game
 
     public void ShowActionsAndStats() 
     {
+        Console.Clear();
         string stats = $"||{jogador.nome} | Vida {jogador.vida}/{jogador.vidamax}||\n------------------------------------\n||{inimigo1.nome} | Vida {inimigo1.vida}/{inimigo1.vidamax}||\n------------------------------------\n";
         Console.WriteLine(stats);
 
@@ -69,14 +70,14 @@ public class Game
 
                     jogador.Atacar(inimigo1);
 
-                    next();
+                    Continue();
 
 
                     Console.WriteLine($"{inimigo1.nome} ataca {jogador.nome} com suas correntes!!\n");
 
                     inimigo1.Atacar(jogador);
 
-                    next();
+                    Continue();
                     break;
 
                 case 2:
@@ -85,14 +86,14 @@ public class Game
 
                     jogador.Defender();
 
-                    next();
+                    Continue();
 
 
                     Console.WriteLine($"{inimigo1.nome} tira uma seringa escondida e a lança contra {jogador.nome}, envenenando-o!\n\nO veneno causa 2 de dano todo turno.\n");
 
                     inimigo1.Envenenar(jogador);
 
-                    next();
+                    Continue();
                     break;
 
                 case 3:
@@ -101,14 +102,14 @@ public class Game
 
                     jogador.Curar();
 
-                    next();
+                    Continue();
 
 
                     Console.WriteLine($"{inimigo1.nome} ataca {jogador.nome} com suas correntes!!\n");
 
                     inimigo1.Atacar(jogador);
 
-                    next();
+                    Continue();
                     break;
                 
                 default:
@@ -120,7 +121,7 @@ public class Game
 
                     inimigo1.Atacar(jogador);
 
-                    next();
+                    Continue();
                     break;
             }
         }

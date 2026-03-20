@@ -41,8 +41,6 @@ public class Arte
 
             Console.Write("Clique Enter para começar o jogo:");
             Console.ReadLine();
-            Console.Clear();
-
             Console.ResetColor();
     }
 }
