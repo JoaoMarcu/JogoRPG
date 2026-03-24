@@ -3,9 +3,9 @@ public class Game
 {
     Player jogador;
 
-    Enemy inimigo1;
-
     Arte TelaDeInicio;
+
+   public List<Enemy> inimigos = new ();
 
     public void StartGame()
     {
@@ -24,32 +24,52 @@ public class Game
             nome = ("Gladiador"),
             vidamax = 100,
             vida = 100,
-            atk = 2
+            atk = 12
         };
 
     }
     public void CreateEnemy()
     {
-        inimigo1 = new Enemy()
+        Enemy inimigo1 = new ()
         {
             nome = ("Prisioneiro Faminto"),
             vidamax = 60,
             vida = 60,
-            atk = 2,
+            atk = 8,
         };
+
+        Enemy inimigo2 = new ()
+        {
+            nome = ("Lanceiro com Escudo"),
+            vidamax = 120,
+            vida = 120,
+            atk = 10,
+        };
+
+        Enemy inimigo3 = new ()
+        {
+            nome = ("Campeão da Arena"),
+            vidamax = 120,
+            vida = 120,
+            atk = 12,
+        };
+
+        inimigos.Add(inimigo1);
+        inimigos.Add(inimigo2);
+        inimigos.Add(inimigo3);
     }
 
-    public void Continue()
+    public static void Continue()
     {
         Console.Write("\nAperte enter para continuar:");
         Console.ReadLine();
         Console.Clear();
     }
 
-    public void ShowActionsAndStats() 
+    public void ShowActionsAndStats(Enemy inimigoAtual) 
     {
         Console.Clear();
-        string stats = $"||{jogador.nome} | Vida {jogador.vida}/{jogador.vidamax}||\n------------------------------------\n||{inimigo1.nome} | Vida {inimigo1.vida}/{inimigo1.vidamax}||\n------------------------------------\n";
+        string stats = $"||{jogador.nome} | Vida {jogador.vida}/{jogador.vidamax}||\n------------------------------------\n||{inimigoAtual.nome} | Vida {inimigoAtual.vida}/{inimigoAtual.vidamax}||\n------------------------------------\n";
         Console.WriteLine(stats);
 
         string options = "1.Atacar\n2.Defender\n3.Comer\n";
@@ -58,71 +78,75 @@ public class Game
     }
     public void Combat()
     {
-        while (jogador.EstaVivo() && inimigo1.EstaVivo())
+        foreach (Enemy inimigoAtual in inimigos)
         {
-            ShowActionsAndStats();
 
-            switch (int.Parse(Console.ReadLine()!))
+            while (jogador.EstaVivo() && inimigoAtual.EstaVivo())
             {
-                case 1:
-                    Console.Clear();
-                    Console.WriteLine($"{jogador.nome} ataca {inimigo1.nome} com sua espada!!\n");
+                ShowActionsAndStats(inimigoAtual);
 
-                    jogador.Atacar(inimigo1);
+                switch (int.Parse(Console.ReadLine()!))
+                {
+                    case 1:
+                        Console.Clear();
+                        Console.WriteLine($"{jogador.nome} ataca {inimigoAtual.nome} com sua espada!!\n");
 
-                    Continue();
-
-
-                    Console.WriteLine($"{inimigo1.nome} ataca {jogador.nome} com suas correntes!!\n");
-
-                    inimigo1.Atacar(jogador);
-
-                    Continue();
-                    break;
-
-                case 2:
-                    Console.Clear();
-                    Console.WriteLine($"{jogador.nome}, está se defendendo!\n");
-
-                    jogador.Defender();
-
-                    Continue();
+                        jogador.Atacar(inimigoAtual);
+    
+                        Continue();
 
 
-                    Console.WriteLine($"{inimigo1.nome} tira uma seringa escondida e a lança contra {jogador.nome}, envenenando-o!\n\nO veneno causa 2 de dano todo turno.\n");
+                        Console.WriteLine($"{inimigoAtual.nome} ataca {jogador.nome} com suas correntes!!\n");
 
-                    inimigo1.Envenenar(jogador);
+                        inimigoAtual.Atacar(jogador);
 
-                    Continue();
-                    break;
+                        Continue();
+                        break;
 
-                case 3:
-                    Console.Clear();
-                    Console.WriteLine($"{jogador.nome} se sente revigorado, curou-se em 20!\n");
+                    case 2:
+                        Console.Clear();
+                        Console.WriteLine($"{jogador.nome}, está se defendendo!\n");
 
-                    jogador.Curar();
+                        jogador.Defender();
 
-                    Continue();
+                        Continue();
 
 
-                    Console.WriteLine($"{inimigo1.nome} ataca {jogador.nome} com suas correntes!!\n");
+                        Console.WriteLine($"{inimigoAtual.nome} tira uma seringa escondida e a lança contra {jogador.nome}, envenenando-o!\n\nO veneno causa 2 de dano todo turno.\n");
 
-                    inimigo1.Atacar(jogador);
+                        inimigoAtual.Envenenar(jogador);
 
-                    Continue();
-                    break;
+                        Continue();
+                        break;
+
+                    case 3:
+                        Console.Clear();
+                        Console.WriteLine($"{jogador.nome} se sente revigorado, curou-se em 20!\n");
+
+                        jogador.Curar();
+
+                        Continue();
+
+
+                        Console.WriteLine($"{inimigoAtual.nome} ataca {jogador.nome} com suas correntes!!\n");
+
+                        inimigoAtual.Atacar(jogador);
+
+                        Continue();
+                        break;
                 
-                default:
-                    Console.Clear();
+                    default:
+                        Console.Clear();
 
-                    Console.WriteLine($"{jogador.nome} escorrega e cai no chão!\n");
+                        Console.WriteLine($"{jogador.nome} escorrega e cai no chão!\n");
 
-                    Console.WriteLine($"{inimigo1.nome} ataca {jogador.nome} com suas correntes!!\n");
+                        Console.WriteLine($"{inimigoAtual.nome} ataca {jogador.nome} com suas correntes!!\n");
 
-                    inimigo1.Atacar(jogador);
+                        inimigoAtual.Atacar(jogador);
 
-                    Continue();
-                    break;
+                        Continue();
+                        break;
+                }
             }
         }
     }
