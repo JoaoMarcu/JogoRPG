@@ -61,7 +61,7 @@ public class Player : Character
             envenenado = false;
         }   
 
-        vida += 4;
+        vida += 20;
 
 		if (vida > vidamax)
 			vida = vidamax;

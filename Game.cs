@@ -24,7 +24,7 @@ public class Game
             nome = ("Gladiador"),
             vidamax = 100,
             vida = 100,
-            atk = 12
+            atk = 50
         };
 
     }
