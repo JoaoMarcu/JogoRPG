@@ -1,8 +1,10 @@
 ﻿using System;
 
-public class Arte
+namespace ArenaGame.Gameplay
 {
-    public const string desenho = """
+    public class Arte
+    {
+        public const string desenho = """
                    _.--.    .--._
                  ."  ."      ".  ".
                 ;  ."    /\    ".  ;
@@ -23,7 +25,7 @@ public class Arte
 :      \  \  \   \                /   /  /  /      :
 """;
 
-    public const string escrito = (@"
+        public const string escrito = (@"
   ____ _        _    ____ ___   _    ____   ___  ____  
  / ___| |      / \  |  _ \_ _| / \  |  _ \ / _ \|  _ \ 
 | |  _| |     / _ \ | | | | | / _ \ | | | | | | | |_) |
@@ -31,8 +33,8 @@ public class Arte
  \____|_____/_/   \_\____/__/_/   \_\____/ \___/|_| \_\
 ");
 
-    public void ExibirArte()
-    {
+        public void ExibirArte()
+        {
             Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.WriteLine(desenho);
 
@@ -42,5 +44,6 @@ public class Arte
             Console.Write("Clique Enter para começar o jogo:");
             Console.ReadLine();
             Console.ResetColor();
+        }
     }
 }

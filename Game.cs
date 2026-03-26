@@ -1,156 +1,161 @@
 ﻿using System;
-public class Game
+using ArenaGame.Players;
+using ArenaGame.Enemies;
+using ArenaGame.Characters;
+
+namespace ArenaGame.Gameplay
 {
-    Player jogador;
-
-    Arte TelaDeInicio;
-
-   public List<Enemy> inimigos = new ();
-
-    public void StartGame()
+    public class Game
     {
-        TelaDeInicio = new Arte()
-        {};
-        TelaDeInicio.ExibirArte();
-        CreatePlayer();
-        CreateEnemy();
-        Combat();
+        private Player jogador = null!;
+        private Arte TelaDeInicio = null!;
 
-    }
-    public void CreatePlayer()
-    {
-        jogador = new Player()
+        public List<Enemy> inimigos = new();
+
+        public void StartGame()
         {
-            nome = ("Gladiador"),
-            vidamax = 100,
-            vida = 100,
-            atk = 50
-        };
+            TelaDeInicio = new Arte()
+            { };
+            TelaDeInicio.ExibirArte();
+            CreatePlayer();
+            CreateEnemy();
+            Combat();
 
-    }
-    public void CreateEnemy()
-    {
-        Enemy inimigo1 = new ()
+        }
+        public void CreatePlayer()
         {
-            nome = ("Prisioneiro Faminto"),
-            vidamax = 60,
-            vida = 60,
-            atk = 8,
-        };
-
-        Enemy inimigo2 = new ()
-        {
-            nome = ("Lanceiro com Escudo"),
-            vidamax = 120,
-            vida = 120,
-            atk = 10,
-        };
-
-        Enemy inimigo3 = new ()
-        {
-            nome = ("Campeão da Arena"),
-            vidamax = 120,
-            vida = 120,
-            atk = 12,
-        };
-
-        inimigos.Add(inimigo1);
-        inimigos.Add(inimigo2);
-        inimigos.Add(inimigo3);
-    }
-
-    public static void Continue()
-    {
-        Console.Write("\nAperte enter para continuar:");
-        Console.ReadLine();
-        Console.Clear();
-    }
-
-    public void ShowActionsAndStats(Enemy inimigoAtual) 
-    {
-        Console.Clear();
-        string stats = $"||{jogador.nome} | Vida {jogador.vida}/{jogador.vidamax}||\n------------------------------------\n||{inimigoAtual.nome} | Vida {inimigoAtual.vida}/{inimigoAtual.vidamax}||\n------------------------------------\n";
-        Console.WriteLine(stats);
-
-        string options = "1.Atacar\n2.Defender\n3.Comer\n";
-        Console.WriteLine(options);
-        Console.Write("Escolha uma das opções:");
-    }
-    public void Combat()
-    {
-        foreach (Enemy inimigoAtual in inimigos)
-        {
-
-            while (jogador.EstaVivo() && inimigoAtual.EstaVivo())
+            jogador = new Player()
             {
-                ShowActionsAndStats(inimigoAtual);
+                nome = ("Gladiador"),
+                vidamax = 100,
+                vida = 100,
+                atk = 2
+            };
 
-                switch (int.Parse(Console.ReadLine()!))
+        }
+        public void CreateEnemy()
+        {
+            Enemy inimigo1 = new Prisioneiro()
+            {
+                nome = ("Prisioneiro Faminto"),
+                vidamax = 60,
+                vida = 60,
+                atk = 2
+            };
+
+            Enemy inimigo2 = new Lanceiro()
+            {
+                nome = ("Lanceiro com Escudo"),
+                vidamax = 120,
+                vida = 120,
+                atk = 10
+            };
+
+            Enemy inimigo3 = new Campeao()
+            {
+                nome = ("Campeão da Arena"),
+                vidamax = 120,
+                vida = 120,
+                atk = 12
+            };
+
+            inimigos.Add(inimigo1);
+            inimigos.Add(inimigo2);
+            inimigos.Add(inimigo3);
+        }
+
+        public static void Continue()
+        {
+            Console.Write("\nAperte enter para continuar:");
+            Console.ReadLine();
+            Console.Clear();
+        }
+
+        public void ShowActionsAndStats(Enemy inimigoAtual)
+        {
+            Console.Clear();
+            string stats = $"||{jogador.nome} | Vida {jogador.vida}/{jogador.vidamax}||\n------------------------------------\n||{inimigoAtual.nome} | Vida {inimigoAtual.vida}/{inimigoAtual.vidamax}||\n------------------------------------\n";
+            Console.WriteLine(stats);
+
+            string options = "1.Atacar\n2.Defender\n3.Comer\n";
+            Console.WriteLine(options);
+            Console.Write("Escolha uma das opções:");
+        }
+        public void Combat()
+        {
+            foreach (Enemy inimigoAtual in inimigos)
+            {
+
+                while (jogador.EstaVivo() && inimigoAtual.EstaVivo())
                 {
-                    case 1:
-                        Console.Clear();
-                        Console.WriteLine($"{jogador.nome} ataca {inimigoAtual.nome} com sua espada!!\n");
+                    ShowActionsAndStats(inimigoAtual);
 
-                        jogador.Atacar(inimigoAtual);
-    
-                        Continue();
+                    switch (int.Parse(Console.ReadLine()!))
+                    {
+                        case 1:
+                            Console.Clear();
+                            Console.WriteLine($"{jogador.nome} ataca {inimigoAtual.nome} com sua espada!!\n");
 
+                            jogador.Atacar(inimigoAtual);
 
-                        Console.WriteLine($"{inimigoAtual.nome} ataca {jogador.nome} com suas correntes!!\n");
-
-                        inimigoAtual.Atacar(jogador);
-
-                        Continue();
-                        break;
-
-                    case 2:
-                        Console.Clear();
-                        Console.WriteLine($"{jogador.nome}, está se defendendo!\n");
-
-                        jogador.Defender();
-
-                        Continue();
+                            Continue();
 
 
-                        Console.WriteLine($"{inimigoAtual.nome} tira uma seringa escondida e a lança contra {jogador.nome}, envenenando-o!\n\nO veneno causa 2 de dano todo turno.\n");
+                            inimigoAtual.DecidirAção(jogador);
 
-                        inimigoAtual.Envenenar(jogador);
+                            Continue();
+                            break;
 
-                        Continue();
-                        break;
+                        case 2:
+                            Console.Clear();
+                            Console.WriteLine($"{jogador.nome}, está se defendendo!\n");
 
-                    case 3:
-                        Console.Clear();
-                        Console.WriteLine($"{jogador.nome} se sente revigorado, curou-se em 20!\n");
+                            jogador.Defender();
 
-                        jogador.Curar();
-
-                        Continue();
+                            Continue();
 
 
-                        Console.WriteLine($"{inimigoAtual.nome} ataca {jogador.nome} com suas correntes!!\n");
+                            //Console.WriteLine($"{inimigoAtual.nome} tira uma seringa escondida e a lança contra {jogador.nome}, envenenando-o!\n\nO veneno causa 2 de dano todo turno.\n");
 
-                        inimigoAtual.Atacar(jogador);
+                            inimigoAtual.DecidirAção(jogador);
 
-                        Continue();
-                        break;
-                
-                    default:
-                        Console.Clear();
+                            Continue();
+                            break;
 
-                        Console.WriteLine($"{jogador.nome} escorrega e cai no chão!\n");
+                        case 3:
+                            Console.Clear();
+                            Console.WriteLine($"{jogador.nome} se sente revigorado, curou-se em 20!\n");
 
-                        Console.WriteLine($"{inimigoAtual.nome} ataca {jogador.nome} com suas correntes!!\n");
+                            jogador.Curar();
 
-                        inimigoAtual.Atacar(jogador);
+                            Continue();
 
-                        Continue();
-                        break;
+
+                            //Console.WriteLine($"{inimigoAtual.nome} ataca {jogador.nome} com suas correntes!!\n");
+
+                            inimigoAtual.DecidirAção(jogador);
+
+                            Continue();
+                            break;
+
+                        default:
+                            Console.Clear();
+
+                            Console.WriteLine($"{jogador.nome} escorrega e cai no chão!\n");
+
+                            Console.WriteLine($"{inimigoAtual.nome} ataca {jogador.nome} com suas correntes!!\n");
+
+                            inimigoAtual.DecidirAção(jogador);
+
+                            Continue();
+                            break;
+                    }
                 }
             }
         }
     }
 }
+
 
 //Console.WriteLine($"{jogador.nome} causou {jogador.atk} de dano em {inimigo1.nome}");
 //Console.WriteLine($"{inimigo1.nome} causou {inimigo1.atk} de dano no {jogador.nome}");

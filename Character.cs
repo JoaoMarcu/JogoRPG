@@ -1,41 +1,44 @@
 ﻿using System;
-using System.Security.Cryptography;
 
-public class Character
+namespace ArenaGame.Characters
 {
-    public required string nome;
-    public int vida;
-    public int atk;
-    public int vidamax;
-    public int chancecritico;
-    public int multiplicritico;
-
-    public Random rng = new Random();
-    public void Atacar(Character alvo)
-    {      
-        alvo.ReceberDano(atk);
-    }
-
-    public virtual void ReceberDano(int dano)
+    public class Character
     {
-        int numero = rng.Next(0, 100);
-        multiplicritico = 2;
-        chancecritico = 20;
+        public required string nome;
+        public int vida;
+        public int atk;
+        public int vidamax;
+        public int chancecritico;
+        public int multiplicritico;
 
-        if (numero < chancecritico)
+        public Random rng = new Random();
+        public virtual void Atacar(Character alvo)
         {
-            dano = dano * multiplicritico;
-            Console.WriteLine("ATAQUE CRITICO!!");
+            alvo.ReceberDano(atk);
         }
 
-        vida -= dano;
+        public virtual void ReceberDano(int dano)
+        {
+            int numero = rng.Next(0, 100);
+            multiplicritico = 2;
+            chancecritico = 20;
 
-        if (vida < 0)
-            vida = 0;
-    }
+            if (numero < chancecritico)
+            {
+                dano = dano * multiplicritico;
+                Console.WriteLine("ATAQUE CRITICO!!");
+            }
 
-    public bool EstaVivo()
-    {
-        return vida > 0;
+            vida -= dano;
+
+            if (vida < 0)
+                vida = 0;
+        }
+
+        public bool EstaVivo()
+        {
+            return vida > 0;
+        }
     }
 }
+
