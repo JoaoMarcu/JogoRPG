@@ -50,7 +50,8 @@ dotnet run
 
 * Melhorias na IA dos inimigos
 * Sistema de progressão
-* Sistema de classes para o jogador (ex: mais ataque vs mais vida)
+* Sistema de classes para o jogador (ex: Executor (Equilibrado) Dano médio,
+Vida média)
 * Novos tipos de inimigos
 
 ---
