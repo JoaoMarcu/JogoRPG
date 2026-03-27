@@ -72,6 +72,6 @@ Este projeto tem como objetivo evoluir habilidades em:
 
 ---
 
-## 👤 Autor
+## 👨‍💻 Autor
 
 Desenvolvido por João Marco Sampaio
