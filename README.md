@@ -52,7 +52,7 @@ O projeto utiliza conceitos de Programação Orientada a Objetos:
 1. Clone o repositório:
 
 ```bash
-git clone https://github.com/seu-usuario/seu-repo.git
+git clone https://github.com/JoaoMarcu/JogoRPG.git
 ```
 
 2. Abra no Visual Studio
