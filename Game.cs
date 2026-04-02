@@ -39,7 +39,7 @@ namespace ArenaGame.Gameplay
             {
                 nome = ("Prisioneiro Faminto"),
                 vidamax = 60,
-                vida = 60,
+                vida = 0,
                 atk = 2
             };
 
@@ -48,7 +48,7 @@ namespace ArenaGame.Gameplay
                 nome = ("Lanceiro com Escudo"),
                 vidamax = 120,
                 vida = 120,
-                atk = 10
+                atk = 2
             };
 
             Enemy inimigo3 = new Campeao()

@@ -11,7 +11,7 @@ namespace ArenaGame.Characters
         public int chancecritico;
         public int multiplicritico;
 
-        public Random rng = new Random();
+        public Random rng = new ();
         public virtual void Atacar(Character alvo)
         {
             alvo.ReceberDano(atk);
