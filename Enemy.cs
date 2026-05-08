@@ -118,6 +118,7 @@ namespace ArenaGame.Enemies
             {
                 escolha = rng.Next(0, 6);
             }
+
             switch (escolha)
             {
                 case 0:

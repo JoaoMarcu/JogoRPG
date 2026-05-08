@@ -29,7 +29,8 @@ namespace ArenaGame.Gameplay
                 nome = ("Gladiador"),
                 vidamax = 100,
                 vida = 100,
-                atk = 2
+                atk = 12,
+                defesa = 5
             };
 
         }
@@ -38,17 +39,19 @@ namespace ArenaGame.Gameplay
             Enemy inimigo1 = new Prisioneiro()
             {
                 nome = ("Prisioneiro Faminto"),
-                vidamax = 60,
-                vida = 0,
-                atk = 2
+                vidamax = 80,
+                vida = 80,
+                atk = 9,
+                defesa = 3
             };
 
             Enemy inimigo2 = new Lanceiro()
             {
                 nome = ("Lanceiro com Escudo"),
-                vidamax = 120,
-                vida = 120,
-                atk = 2
+                vidamax = 140,
+                vida = 140,
+                atk = 10,
+                defesa = 8
             };
 
             Enemy inimigo3 = new Campeao()
@@ -56,7 +59,8 @@ namespace ArenaGame.Gameplay
                 nome = ("Campeão da Arena"),
                 vidamax = 120,
                 vida = 120,
-                atk = 12
+                atk = 14,
+                defesa = 6
             };
 
             inimigos.Add(inimigo1);
@@ -74,7 +78,7 @@ namespace ArenaGame.Gameplay
         public void ShowActionsAndStats(Enemy inimigoAtual)
         {
             Console.Clear();
-            string stats = $"||{jogador.nome} | Vida {jogador.vida}/{jogador.vidamax}||\n------------------------------------\n||{inimigoAtual.nome} | Vida {inimigoAtual.vida}/{inimigoAtual.vidamax}||\n------------------------------------\n";
+            string stats = $"||{jogador.nome} | Vida {jogador.vida}/{jogador.vidamax} | Atk {jogador.atk} | Def {jogador.defesa}||\n--------------------------------------------------------\n||{inimigoAtual.nome} | Vida {inimigoAtual.vida}/{inimigoAtual.vidamax} | Atk {inimigoAtual.atk} | Def {inimigoAtual.defesa}||\n--------------------------------------------------------\n";
             Console.WriteLine(stats);
 
             string options = "1.Atacar\n2.Defender\n3.Comer\n";
@@ -142,8 +146,6 @@ namespace ArenaGame.Gameplay
                             Console.Clear();
 
                             Console.WriteLine($"{jogador.nome} escorrega e cai no chão!\n");
-
-                            Console.WriteLine($"{inimigoAtual.nome} ataca {jogador.nome} com suas correntes!!\n");
 
                             inimigoAtual.DecidirAção(jogador);
 

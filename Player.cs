@@ -6,25 +6,37 @@ namespace ArenaGame.Players
     public class Player : Character
     {
 
-        public int veneno = 2;
+        public int veneno = 4;
         public bool envenenado;
-        public int sangrar = 4;
+        public int sangrar = 6;
         public bool sangrando;
         public int sangrarTurnos = 0;
+        public int defenderTurnos = 0;
         public bool defendendo;
 
         public void Defender()
         {
-            Console.WriteLine($"{nome} está se defendendo!\n");
+            Console.WriteLine($"{nome} está se defendendo! O escudo está levantado por 2 turnos.\n");
             defendendo = true;
+        }
+
+        public void PararDefender()
+        {
+            if (defenderTurnos >= 2)
+            {
+                Console.WriteLine($"{nome} baixou o escudo!");
+                defendendo = false;
+                defenderTurnos = 0;
+            }
+
+            sangrarTurnos++;
         }
 
         public override void ReceberDano(int dano)
         {
             if (defendendo)
             {
-                dano = 0;
-                defendendo = false;
+                defesa *= 2 ;
             }
 
             if (envenenado)

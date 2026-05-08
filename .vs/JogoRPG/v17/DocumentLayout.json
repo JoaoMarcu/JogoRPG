@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\jonny\\OneDrive\\Documentos\\Jogo RPG escrito\\JogoRPG\\JogoRPG\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{19D6E4F8-713B-7EA0-4837-2B9782C369F8}|JogoRPG.csproj|c:\\users\\jonny\\onedrive\\documentos\\jogo rpg escrito\\jogorpg\\jogorpg\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{19D6E4F8-713B-7EA0-4837-2B9782C369F8}|JogoRPG.csproj|solutionrelative:game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{19D6E4F8-713B-7EA0-4837-2B9782C369F8}|JogoRPG.csproj|c:\\users\\jonny\\onedrive\\documentos\\jogo rpg escrito\\jogorpg\\jogorpg\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{19D6E4F8-713B-7EA0-4837-2B9782C369F8}|JogoRPG.csproj|solutionrelative:enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -13,10 +17,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{19D6E4F8-713B-7EA0-4837-2B9782C369F8}|JogoRPG.csproj|c:\\users\\jonny\\onedrive\\documentos\\jogo rpg escrito\\jogorpg\\jogorpg\\character.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{19D6E4F8-713B-7EA0-4837-2B9782C369F8}|JogoRPG.csproj|solutionrelative:character.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{19D6E4F8-713B-7EA0-4837-2B9782C369F8}|JogoRPG.csproj|c:\\users\\jonny\\onedrive\\documentos\\jogo rpg escrito\\jogorpg\\jogorpg\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{19D6E4F8-713B-7EA0-4837-2B9782C369F8}|JogoRPG.csproj|solutionrelative:game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{19D6E4F8-713B-7EA0-4837-2B9782C369F8}|JogoRPG.csproj|c:\\users\\jonny\\onedrive\\documentos\\jogo rpg escrito\\jogorpg\\jogorpg\\arte.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -34,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
@@ -51,13 +51,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "Game.cs",
               "DocumentMoniker": "C:\\Users\\jonny\\OneDrive\\Documentos\\Jogo RPG escrito\\JogoRPG\\JogoRPG\\Game.cs",
               "RelativeDocumentMoniker": "Game.cs",
               "ToolTip": "C:\\Users\\jonny\\OneDrive\\Documentos\\Jogo RPG escrito\\JogoRPG\\JogoRPG\\Game.cs",
               "RelativeToolTip": "Game.cs",
-              "ViewState": "AgIAACYAAAAAAAAAAAAgwDIAAAAXAAAAAAAAAA==",
+              "ViewState": "AgIAAIYAAAAAAAAAAAAswI4AAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-19T02:18:43.397Z",
               "IsPinned": true,
@@ -65,41 +65,39 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Character.cs",
               "DocumentMoniker": "C:\\Users\\jonny\\OneDrive\\Documentos\\Jogo RPG escrito\\JogoRPG\\JogoRPG\\Character.cs",
               "RelativeDocumentMoniker": "Character.cs",
               "ToolTip": "C:\\Users\\jonny\\OneDrive\\Documentos\\Jogo RPG escrito\\JogoRPG\\JogoRPG\\Character.cs",
               "RelativeToolTip": "Character.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAQwB0AAAANAAAAAAAAAA==",
+              "ViewState": "AgIAABMAAAAAAAAAAAAQwB8AAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-19T02:18:40.964Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Player.cs",
               "DocumentMoniker": "C:\\Users\\jonny\\OneDrive\\Documentos\\Jogo RPG escrito\\JogoRPG\\JogoRPG\\Player.cs",
               "RelativeDocumentMoniker": "Player.cs",
               "ToolTip": "C:\\Users\\jonny\\OneDrive\\Documentos\\Jogo RPG escrito\\JogoRPG\\JogoRPG\\Player.cs",
               "RelativeToolTip": "Player.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAQwCgAAAAjAAAAAAAAAA==",
+              "ViewState": "AgIAACMAAAAAAAAAAAAgwAoAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-19T02:18:44.396Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Enemy.cs",
               "DocumentMoniker": "C:\\Users\\jonny\\OneDrive\\Documentos\\Jogo RPG escrito\\JogoRPG\\JogoRPG\\Enemy.cs",
               "RelativeDocumentMoniker": "Enemy.cs",
               "ToolTip": "C:\\Users\\jonny\\OneDrive\\Documentos\\Jogo RPG escrito\\JogoRPG\\JogoRPG\\Enemy.cs",
               "RelativeToolTip": "Enemy.cs",
-              "ViewState": "AgIAAHMAAAAAAAAAAAAswHQAAAAtAAAAAAAAAA==",
+              "ViewState": "AgIAAGYAAAAAAAAAAAAUwHgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-19T02:18:42.659Z",
               "IsPinned": true,
@@ -116,8 +114,7 @@
               "ViewState": "AgIAAAsAAAAAAAAAAAAQwC8AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-19T19:29:38.679Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             }
           ]
         }
